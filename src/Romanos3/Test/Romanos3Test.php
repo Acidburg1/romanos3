@@ -136,12 +136,22 @@ class Romanos3Test extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('VIII', $this->romanos3->devuelve("8"));
     }
 
+//
     public function testDevuelve9() {
         $this->assertEquals('IX', $this->romanos3->devuelve("9"));
     }
 
     public function testDevuelve10() {
         $this->assertEquals('X', $this->romanos3->devuelve("10"));
+    }
+
+//
+    public function testDevuelve11() {
+        $this->assertEquals('XI', $this->romanos3->devuelve("11"));
+    }
+
+    public function testDevuelve15() {
+        $this->assertEquals('XV', $this->romanos3->devuelve("15"));
     }
 
 }
