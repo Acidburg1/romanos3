@@ -31,10 +31,10 @@ class Romanos3 {
         if ($digito > 3) {
             $numeroqueEscribir = $this->cogerLimite($digito);
         }
-        if ($lugarEscribo == 'D') {
+        if ($lugarEscribo == 'I') {
             $devuelve = $devuelve . $numeroqueEscribir;
         }
-        if ($lugarEscribo == 'I') {
+        if ($lugarEscribo == 'D') {
             $devuelve = $numeroqueEscribir . $devuelve;
         }
 
@@ -52,10 +52,14 @@ class Romanos3 {
     }
 
     public function derechaIzquierda($digito) {
-        if ($digito > 5) {
+        if ($digito == 9) {
             return 'I';
-        } else {
+        }
+
+        if ($digito > 5) {
             return 'D';
+        } else {
+            return 'I';
         }
     }
 
