@@ -22,16 +22,20 @@ class Romanos3 {
         $digito = (Integer) $numero[$digito];
         $limite = $this->tocaLimite($digito, 0);
         print($digito);
-        //   if ($limite == 0) {
-        // }
+
         return $devuelve = $this->devuelveCifra($digito);
     }
 
-    public function devuelveCifra($digito) {
+    public function devuelveRepetidos($digito) {
         $devuelve = "";
         for ($a = 0; $a < $this->contador($digito); $a++) {
             $devuelve = $devuelve . 'I';
         }
+        return $devuelve;
+    }
+
+    public function devuelveCifra($digito) {
+        $devuelve = $this->devuelveRepetidos($digito);
         $lugarEscribo = $this->derechaIzquierda($digito);
         $numeroqueEscribir = "";
         if ($digito > 3) {
