@@ -22,20 +22,40 @@ class Romanos3 {
         $digito = (Integer) $numero[$digito];
         $limite = $this->tocaLimite($digito, 0);
         print($digito);
-        if ($limite == 0) {
-
-            for ($a = 0; $a < $this->contador($digito); $a++) {
-                $devuelve = $devuelve . 'I';
-            }
+        //   if ($limite == 0) {
+        for ($a = 0; $a < $this->contador($digito); $a++) {
+            $devuelve = $devuelve . 'I';
         }
+        $lugarEscribo = $this->derechaIzquierda($digito);
+        $numeroqueEscribir = "";
+        if ($digito > 3) {
+            $numeroqueEscribir = $this->cogerLimite($digito);
+        }
+        if ($lugarEscribo == 'D') {
+            $devuelve = $devuelve . $numeroqueEscribir;
+        }
+        if ($lugarEscribo == 'I') {
+            $devuelve = $numeroqueEscribir . $devuelve;
+        }
+
+
+        // }
         return $devuelve;
     }
 
-    public function derechaIzquierda($digito) {
-        if ($digito == 9 || $digito > 5) {
-            return 'D';
+    public function cogerLimite($digito) {
+        if ($digito == 9) {
+            return 'X';
         } else {
+            return 'V';
+        }
+    }
+
+    public function derechaIzquierda($digito) {
+        if ($digito > 5) {
             return 'I';
+        } else {
+            return 'D';
         }
     }
 
