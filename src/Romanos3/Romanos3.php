@@ -23,6 +23,12 @@ class Romanos3 {
         $limite = $this->tocaLimite($digito, 0);
         print($digito);
         //   if ($limite == 0) {
+        // }
+        return $devuelve = $this->devuelveCifra($digito);
+    }
+
+    public function devuelveCifra($digito) {
+        $devuelve = "";
         for ($a = 0; $a < $this->contador($digito); $a++) {
             $devuelve = $devuelve . 'I';
         }
@@ -37,9 +43,6 @@ class Romanos3 {
         if ($lugarEscribo == 'D') {
             $devuelve = $numeroqueEscribir . $devuelve;
         }
-
-
-        // }
         return $devuelve;
     }
 
